@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelsuby Health & Wellness, LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --royal-purple: #4B1E6B;
+    --deep-burgundy: #6B1E3A;
+    --blush-pink: #C97B9A;
+    --soft-pink: #F0D6E4;
+    --gold: #C9A96E;
+    --cream: #FAF6F1;
+    --dark: #1A0A26;
+    --text-body: #2D1B3A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(250,246,241,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(75,30,107,0.12);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--royal-purple);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+  .nav-logo span {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--blush-pink);
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--royal-purple); }
+  .nav-cta {
+    background: var(--royal-purple);
+    color: #fff !important;
+    padding: 10px 24px;
+    letter-spacing: 0.12em;
+    font-size: 0.68rem !important;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--deep-burgundy) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 60px 80px 60px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blush-pink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--blush-pink);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--royal-purple);
+    margin-bottom: 12px;
+  }
+  .hero-title strong {
+    font-weight: 600;
+    color: var(--deep-burgundy);
+  }
+  .hero-tagline {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  .hero-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.18rem;
+    line-height: 1.75;
+    color: var(--text-body);
+    opacity: 0.82;
+    max-width: 440px;
+    margin-bottom: 44px;
+  }
+  .hero-scripture {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--deep-burgundy);
+    line-height: 1.6;
+    margin-bottom: 48px;
+    max-width: 380px;
+  }
+  .hero-scripture cite {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-top: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--royal-purple);
+    color: #fff;
+    padding: 16px 42px;
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .btn-primary:hover {
+    background: var(--deep-burgundy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(75,30,107,0.3);
+  }
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--royal-purple);
+    color: var(--royal-purple);
+    padding: 15px 36px;
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-radius: 2px;
+    margin-left: 16px;
+  }
+  .btn-outline:hover { background: var(--royal-purple); color: #fff; }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+  }
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-right-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(75,30,107,0.25) 0%, rgba(107,30,58,0.15) 100%);
+  }
+
+  /* ===== SECTION SHARED ===== */
+  section { padding: 100px 60px; }
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blush-pink);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--blush-pink);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--royal-purple);
+    margin-bottom: 20px;
+  }
+  .section-title strong {
+    font-weight: 600;
+    color: var(--deep-burgundy);
+  }
+
+  /* ===== APPROACH ===== */
+  .approach { background: var(--dark); }
+  .approach-inner { max-width: 1100px; margin: 0 auto; }
+  .approach .section-label { color: var(--gold); }
+  .approach .section-label::before { background: var(--gold); }
+  .approach .section-title { color: var(--cream); }
+  .approach .section-title strong { color: var(--blush-pink); }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .approach-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .approach-card:hover { background: rgba(255,255,255,0.08); }
+  .approach-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+  .approach-card:hover .approach-card-img { opacity: 0.9; }
+  .approach-card-body { padding: 36px 30px 40px; }
+  .approach-card .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(201,169,110,0.3);
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  .approach-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  .approach-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(250,246,241,0.55);
+  }
+  .approach-card .icon-pill {
+    display: inline-block;
+    background: rgba(201,169,110,0.15);
+    color: var(--gold);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 18px;
+  }
+
+  /* ===== SERVICES ===== */
+  .services { background: var(--cream); }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+  }
+  .services-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    opacity: 0.7;
+    max-width: 360px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3px;
+  }
+  .service-item {
+    background: var(--soft-pink);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .service-item:nth-child(even) { background: #EDD4E2; }
+  .service-item:hover { transform: scale(1.01); z-index: 2; box-shadow: 0 20px 50px rgba(75,30,107,0.15); }
+  .service-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  .service-item-body { padding: 36px 40px 44px; }
+  .service-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    color: var(--royal-purple);
+    margin-bottom: 12px;
+  }
+  .service-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    opacity: 0.75;
+  }
+  .service-item .service-corner {
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    background: rgba(201,169,110,0.2);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: 2;
+  }
+
+  /* ===== QUOTE BANNER ===== */
+  .quote-banner {
+    background: var(--royal-purple);
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-banner::before {
+    content: '\201C';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-banner blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    color: var(--cream);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-banner cite {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-style: normal;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== ABOUT ===== */
+  .about { background: #F5EEF5; }
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-photo { position: relative; }
+  .about-photo img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+    display: block;
+  }
+  .about-accent-line {
+    position: absolute;
+    left: -24px;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold), var(--blush-pink));
+    border-radius: 2px;
+  }
+  .about-creds {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .cred-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 3px;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--royal-purple);
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(75,30,107,0.08);
+  }
+  .cred-badge::before { content: 'v'; color: var(--gold); font-size: 0.8rem; font-family: 'Josefin Sans', sans-serif; font-weight: 600; }
+  .about-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--royal-purple);
+    margin-bottom: 6px;
+  }
+  .about-title-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blush-pink);
+    margin-bottom: 28px;
+  }
+  .about-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--text-body);
+    opacity: 0.8;
+    margin-bottom: 16px;
+  }
+
+  /* ===== BOOK ===== */
+  .book { background: var(--cream); }
+  .book-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .book-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    opacity: 0.7;
+    margin-bottom: 48px;
+  }
+  .book-form {
+    background: white;
+    border: 1px solid rgba(75,30,107,0.1);
+    border-radius: 4px;
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(75,30,107,0.08);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+  .form-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--royal-purple);
+    font-weight: 600;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1px solid rgba(75,30,107,0.18);
+    border-radius: 2px;
+    padding: 14px 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-body);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--royal-purple);
+  }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-full { margin-bottom: 16px; }
+  .book-form .btn-primary {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .insurance-note {
+    font-size: 0.7rem;
+    color: var(--blush-pink);
+    margin-top: 16px;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== SHOP ===== */
+  .shop { background: var(--dark); padding: 100px 60px; }
+  .shop-inner { max-width: 1100px; margin: 0 auto; }
+  .shop .section-label { color: var(--gold); }
+  .shop .section-label::before { background: var(--gold); }
+  .shop .section-title { color: var(--cream); }
+  .shop .section-title strong { color: var(--gold); }
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+    margin-top: 50px;
+  }
+  .shop-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .shop-item:hover { background: rgba(255,255,255,0.09); }
+  .shop-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .shop-item:hover img { opacity: 1; }
+  .shop-item-body { padding: 28px 26px 32px; text-align: center; }
+  .shop-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .shop-item p {
+    font-size: 0.78rem;
+    color: rgba(250,246,241,0.5);
+    line-height: 1.6;
+  }
+  .shop-coming-soon {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 60px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+  }
+  .footer-brand .nav-logo {
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-bottom: 14px;
+  }
+  .footer-brand .nav-logo span { color: var(--blush-pink); }
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.98rem;
+    color: rgba(250,246,241,0.45);
+    line-height: 1.7;
+  }
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col ul li a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: rgba(250,246,241,0.45);
+    transition: color 0.3s;
+    letter-spacing: 0.04em;
+  }
+  .footer-col ul li a:hover { color: var(--blush-pink); }
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p {
+    font-size: 0.68rem;
+    color: rgba(250,246,241,0.3);
+    letter-spacing: 0.06em;
+  }
+  .hipaa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(201,169,110,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 120px 24px 60px; }
+    .hero-right { height: 320px; }
+    section { padding: 70px 24px; }
+    .approach-grid,
+    .services-grid,
+    .shop-grid { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .services-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .book-form { padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    Kelsuby Health &amp; Wellness
+    <span>LLC · Psychiatric Nurse Practitioner</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#book" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left fade-up">
+    <p class="hero-eyebrow">Faith · Healing · Wholeness</p>
+    <h1 class="hero-title">
+      Holistic Mental<br>
+      Health Care for<br>
+      <strong>Mind, Body and Spirit</strong>
+    </h1>
+    <p class="hero-tagline">A Holistic Approach to Care</p>
+    <p class="hero-desc">
+      Board-certified psychiatric and adult-gerontology nurse practitioner services integrating medication management, evidence-based therapy, and faith-based healing for lasting wellness.
+    </p>
+    <blockquote class="hero-scripture">
+      "Behold, I am the Lord, the God of all flesh. Is there anything too hard for me?"
+      <cite> Jeremiah 32:27</cite>
+    </blockquote>
+    <div>
+      <a href="#book" class="btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img
+      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&q=80&auto=format&fit=crop"
+      alt="Compassionate healthcare provider"
+      loading="eager"
+    />
+    <div class="hero-right-overlay"></div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-inner">
+    <p class="section-label fade-up">Our Philosophy</p>
+    <h2 class="section-title fade-up">A <strong>Triad of Healing</strong></h2>
+    <div class="approach-grid">
+      <div class="approach-card fade-up">
+        <img
+          class="approach-card-img"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75&auto=format&fit=crop"
+          alt="Medication management and clinical care"
+        />
+        <div class="approach-card-body">
+          <div class="number">01</div>
+          <h3>Medication Management</h3>
+          <p>Evidence-based psychiatric medication evaluation, management, and monitoring tailored to your unique neurological needs and life circumstances.</p>
+          <span class="icon-pill">Clinical Excellence</span>
+        </div>
+      </div>
+      <div class="approach-card fade-up">
+        <img
+          class="approach-card-img"
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=75&auto=format&fit=crop"
+          alt="Therapeutic support session"
+        />
+        <div class="approach-card-body">
+          <div class="number">02</div>
+          <h3>Therapeutic Support</h3>
+          <p>Collaborative, client centered therapy integrating cognitive and behavioral approaches that engage providers, clients, and families in the healing journey.</p>
+          <span class="icon-pill">Evidence-Based</span>
+        </div>
+      </div>
+      <div class="approach-card fade-up">
+        <img
+          class="approach-card-img"
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=75&auto=format&fit=crop"
+          alt="Faith-grounded spiritual wellness"
+        />
+        <div class="approach-card-body">
+          <div class="number">03</div>
+          <h3>Faith-Grounded Care</h3>
+          <p>Integrating prayer and spiritual principles as an active foundation for mental wellness, honoring the connection between spiritual and psychological health.</p>
+          <span class="icon-pill">Holistic Approach</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div>
+        <p class="section-label fade-up">What We Offer</p>
+        <h2 class="section-title fade-up">Comprehensive <strong>Psychiatric Services</strong></h2>
+      </div>
+      <p class="services-desc fade-up">Virtual and in-person appointments available. Accepting most major insurance plans.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-item fade-up">
+        <div class="service-corner"></div>
+        <img
+          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=700&q=75&auto=format&fit=crop"
+          alt="Psychiatric evaluation"
+        />
+        <div class="service-item-body">
+          <h3>Psychiatric Evaluation</h3>
+          <p>Comprehensive assessment of mental health conditions including depression, anxiety, PTSD, bipolar disorder, and more  with a holistic lens.</p>
+        </div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-corner"></div>
+        <img
+          src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&q=75&auto=format&fit=crop"
+          alt="Medication management"
+        />
+        <div class="service-item-body">
+          <h3>Medication Management</h3>
+          <p>Ongoing oversight of psychiatric medications with careful titration, monitoring, and patient education to optimize your treatment outcomes.</p>
+        </div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-corner"></div>
+        <img
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=700&q=75&auto=format&fit=crop"
+          alt="Individual therapy session"
+        />
+        <div class="service-item-body">
+          <h3>Individual Therapy</h3>
+          <p>One on one sessions addressing the root causes of mental health challenges using evidence-based therapeutic modalities.</p>
+        </div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-corner"></div>
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=75&auto=format&fit=crop"
+          alt="Family support session"
+        />
+        <div class="service-item-body">
+          <h3>Family Support</h3>
+          <p>Collaborative sessions that involve family members as partners in care, strengthening support systems and improving outcomes together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<div class="quote-banner">
+  <blockquote>"Mental wellness is not the absence of struggle  it is the presence of strength, support, and the courage to heal."</blockquote>
+  <cite>— Kelsuby Health &amp; Wellness, LLC</cite>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="about-photo">
+        <div class="about-accent-line"></div>
+        <img
+          src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=600&q=80&auto=format&fit=crop&crop=faces"
+          alt="Dr. RNyakako — Psychiatric Nurse Practitioner"
+        />
+      </div>
+      <div class="about-creds">
+        <span class="cred-badge">Psychiatric Nurse Practitioner, DNP</span>
+        <span class="cred-badge">Adult-Gerontology NP Certified</span>
+        <span class="cred-badge">In Practice Since 2015</span>
+        <span class="cred-badge">PhD Completed 2023</span>
+      </div>
+    </div>
+    <div class="fade-up">
+      <p class="section-label">Meet Your Provider</p>
+      <h2 class="section-title">Rooted in <strong>Faith and Expertise</strong></h2>
+      <div class="about-name">Dr. RNyakako</div>
+      <div class="about-title-tag">DNP · PMHNP-BC · AGPCNP-BC</div>
+      <p class="about-text">
+        With over a decade of clinical nursing experience and dual board certification in psychiatric and adult gerontology care, Dr. RNyakako brings a uniquely comprehensive perspective to mental health treatment.
+      </p>
+      <p class="about-text">
+        Her practice is rooted in a deep conviction that true healing addresses the whole person — mind, body, and spirit. Drawing on her faith, clinical rigor, and compassionate approach, she creates a sanctuary where patients feel seen, heard, and genuinely cared for.
+      </p>
+      <p class="about-text">
+        Her doctoral research explores mental health stigma among the Jamaican diaspora, reflecting her commitment to culturally responsive, inclusive care.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="book-inner">
+    <p class="section-label" style="justify-content:center;">Start Your Journey</p>
+    <h2 class="section-title" style="text-align:center;">Request an <strong>Appointment</strong></h2>
+    <p class="book-subtitle">Take the first step toward holistic mental wellness. Complete the form below and our team will reach out within 1–2 business days to schedule your consultation.</p>
+    <div class="book-form fade-up">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(000) 000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Insurance Provider</label>
+          <select>
+            <option>Select your insurance</option>
+            <option>Blue Cross Blue Shield</option>
+            <option>Aetna</option>
+            <option>United Healthcare</option>
+            <option>Cigna</option>
+            <option>Medicare</option>
+            <option>Medicaid</option>
+            <option>Self-Pay</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Appointment Type</label>
+          <select>
+            <option>Select type</option>
+            <option>Initial Psychiatric Evaluation</option>
+            <option>Medication Management</option>
+            <option>Individual Therapy</option>
+            <option>Family Consultation</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group form-full">
+        <label>Brief Description of Concerns (Optional)</label>
+        <textarea placeholder="Share anything that would help us prepare for your visit..."></textarea>
+      </div>
+      <button class="btn-primary">Request Appointment</button>
+      <p class="insurance-note">This form does not collect protected health information. HIPAA-compliant intake will be completed through our secure EHR system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="shop" id="shop">
+  <div class="shop-inner">
+    <p class="section-label fade-up">Natural Wellness</p>
+    <h2 class="section-title fade-up">Our <strong>Wellness Shop</strong></h2>
+    <div class="shop-grid">
+      <div class="shop-item fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&q=75&auto=format&fit=crop"
+          alt="Organic ginger juice"
+        />
+        <div class="shop-item-body">
+          <h3>Organic Ginger Juice</h3>
+          <p>Cold-pressed, raw ginger juice to support digestive and inflammatory health naturally.</p>
+          <div class="shop-coming-soon">Coming Soon</div>
+        </div>
+      </div>
+      <div class="shop-item fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=75&auto=format&fit=crop"
+          alt="Wellness vitamins and supplements"
+        />
+        <div class="shop-item-body">
+          <h3>Wellness Vitamins</h3>
+          <p>Curated supplements supporting mental clarity, mood balance, and nervous system health.</p>
+          <div class="shop-coming-soon">Coming Soon</div>
+        </div>
+      </div>
+      <div class="shop-item fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1591710668263-e5b86ca4596f?w=600&q=75&auto=format&fit=crop"
+          alt="Natural herbal remedies"
+        />
+        <div class="shop-item-body">
+          <h3>Natural Remedies</h3>
+          <p>Practitioner-selected herbal and natural products to complement your mental wellness journey.</p>
+          <div class="shop-coming-soon">Coming Soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        Kelsuby Health &amp; Wellness
+        <span>LLC · Psychiatric Nurse Practitioner</span>
+      </div>
+      <p>Faith-based, holistic psychiatric care integrating medication, therapy, and spiritual wellness for lasting mental health transformation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Psychiatric Evaluation</a></li>
+        <li><a href="#">Medication Management</a></li>
+        <li><a href="#">Individual Therapy</a></li>
+        <li><a href="#">Family Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        <li><a href="#">About Dr. RNyakako</a></li>
+        <li><a href="#">Insurance and Fees</a></li>
+        <li><a href="#">Patient Forms</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">HIPAA Notice</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kelsuby Health &amp; Wellness, LLC. All rights reserved. · Boston, MA</p>
+    <div class="hipaa-badge">HIPAA Compliant Practice</div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.approach-grid, .services-grid, .shop-grid').forEach(grid => {
+    [...grid.children].forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.12}s`;
+    });
+  });
+</script>
+</body>
+</html>
